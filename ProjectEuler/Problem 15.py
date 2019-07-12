@@ -17,6 +17,6 @@ def choose(n, k):
 
 # Explanation: for the 2x2 case, you must take a total of 4 moves to get from one corner to the other.
 # Each route can be expressed in terms of letters, for example DRRD. There must be 2 D's and 2 R's, so there are
-# 2 choose 2 = 6 ways to traverse through the grid.
+# 4 choose 2 = 6 ways to traverse through the grid.
 # For the mxn case, the number of ways is (m + n) choose n
 print(choose(40, 20))
