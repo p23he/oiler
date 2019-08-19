@@ -34,15 +34,20 @@
         else:
             return gcd(b, a % b)
 
-    count = 0
+nums = []
+den = []
 
-    for d in range(2, 100):
-        for n in range(1, d):
-            result = n / d
-            #print(n, d)
-            maybe = share_del(n, d)
-            if maybe[1] and maybe[0] == result:
-                print(n, d, result, maybe[0])
-                count += 1
-    print(count)
-    print(65 * 64 * 95 * 98 / gcd(16 * 26 * 19 * 49, 65 * 64 * 95 * 98))
+for d in range(2, 100):
+    for n in range(1, d):
+        if n % 10 == 0 and d % 10 == 0:
+            continue
+        result = n / d
+        maybe = share_del(n, d)
+        if maybe[1] and maybe[0] == result:
+            nums.append(n)
+            den.append(d)
+prodn = 1
+prodd = 1
+for i in nums: prodn *= i
+for i in den: prodd *= i
+print(prodd / gcd(prodn, prodd))
